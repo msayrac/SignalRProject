@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.EntityLayer", "Sign
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.DataAccessLayer", "SignalR.DataAccessLayer\SignalR.DataAccessLayer.csproj", "{7AF9E6FB-D8F7-4E68-8A3B-D7B6DC1C8821}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.BusinessLayer", "SignalR.BusinessLayer\SignalR.BusinessLayer.csproj", "{E35E140E-2BF7-4285-9516-3404D81DA050}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.DtoLayer", "SignalR.DtoLayer\SignalR.DtoLayer.csproj", "{8CBF388F-A59B-4204-A16E-F5F047490E26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{7AF9E6FB-D8F7-4E68-8A3B-D7B6DC1C8821}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AF9E6FB-D8F7-4E68-8A3B-D7B6DC1C8821}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AF9E6FB-D8F7-4E68-8A3B-D7B6DC1C8821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35E140E-2BF7-4285-9516-3404D81DA050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35E140E-2BF7-4285-9516-3404D81DA050}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35E140E-2BF7-4285-9516-3404D81DA050}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35E140E-2BF7-4285-9516-3404D81DA050}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CBF388F-A59B-4204-A16E-F5F047490E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CBF388F-A59B-4204-A16E-F5F047490E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CBF388F-A59B-4204-A16E-F5F047490E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CBF388F-A59B-4204-A16E-F5F047490E26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
