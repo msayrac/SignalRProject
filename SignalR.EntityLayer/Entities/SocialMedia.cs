@@ -13,7 +13,5 @@ namespace SignalR.EntityLayer.Entities
         public string Url { get; set; }
         public string Icon { get; set; }
 
-
-
     }
 }
