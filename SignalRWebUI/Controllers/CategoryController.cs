@@ -65,6 +65,7 @@ namespace SignalRWebUI.Controllers
 			return View();
 		}
 
+		[HttpGet]
 		public async Task<IActionResult> UpdateCategory(int id)
 		{
 			var client = _httpClientFactory.CreateClient();
@@ -82,7 +83,6 @@ namespace SignalRWebUI.Controllers
 		}
 
 		[HttpPost]
-
 		public async Task<IActionResult> UpdateCategory(UpdateCategoryDto updateCategoryDto)
 		{
 			var client = _httpClientFactory.CreateClient();
