@@ -1,15 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SignalRWebUI.Dtos.BookingDto;
+using SignalRWebUI.Dtos.ContactDtos;
 using System.Text;
 
 namespace SignalRWebUI.Controllers
 {
-	public class BookingController : Controller
+	public class ContactController : Controller
 	{
 		private readonly IHttpClientFactory _httpClientFactory;
 
-		public BookingController(IHttpClientFactory httpClientFactory)
+		public ContactController(IHttpClientFactory httpClientFactory)
 		{
 			_httpClientFactory = httpClientFactory;
 		}
@@ -17,46 +18,45 @@ namespace SignalRWebUI.Controllers
 		public async Task<IActionResult> Index()
 		{
 			var client = _httpClientFactory.CreateClient();
-
-			var responseMessage = await client.GetAsync("https://localhost:7244/api/Booking");
+			var responseMessage = await client.GetAsync("https://localhost:7244/api/Contact");
 
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
-				var values = JsonConvert.DeserializeObject<List<ResultBookingDto>>(jsonData);
-				return View(values);
+				var value = JsonConvert.DeserializeObject<List<ResultContactDto>>(jsonData);
+				return View(value);
 			}
 			return View();
 		}
 
 		[HttpGet]
-		public IActionResult CreateBooking()
+		public IActionResult CreateContact()
 		{
 			return View();
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> CreateBooking(CreateBookingDto createBookingDto)
+		public async Task<IActionResult> CreateContact(CreateContactDto createContactDto)
 		{
 			var client = _httpClientFactory.CreateClient();
 
-			var jsonData = JsonConvert.SerializeObject(createBookingDto);
+			var jsonData = JsonConvert.SerializeObject(createContactDto);
 			StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
-			var responseMessage = await client.PostAsync("https://localhost:7244/api/Booking", stringContent);
+			var responseMessage = await client.PostAsync("https://localhost:7244/api/Contact", stringContent);
 
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("Index");
-
 			}
 			return View();
 		}
 
-		public async Task<IActionResult> DeleteBooking(int id)
+
+		public async Task<IActionResult> DeleteContact(int id)
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.DeleteAsync($"https://localhost:7244/api/Booking/{id}");
+			var responseMessage = await client.DeleteAsync($"https://localhost:7244/api/Contact/{id}");
 
 			if (responseMessage.IsSuccessStatusCode)
 			{
@@ -66,38 +66,46 @@ namespace SignalRWebUI.Controllers
 		}
 
 		[HttpGet]
-		public async Task<IActionResult> UpdateBooking(int id)
+		public async Task<IActionResult> UpdateContact(int id)
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.GetAsync($"https://localhost:7244/api/Booking/{id}");
+			var responseMessage = await client.GetAsync($"https://localhost:7244/api/Contact/{id}");
 
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
-				var values = JsonConvert.DeserializeObject<UpdateBookingDto>(jsonData);
+				var values = JsonConvert.DeserializeObject<UpdateContactDto>(jsonData);
 				return View(values);
 			}
 			return View();
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> UpdateBooking(UpdateBookingDto updateBookingDto)
+		public async Task<IActionResult> UpdateContact(UpdateContactDto updateContactDto)
 		{
 			var client = _httpClientFactory.CreateClient();
-			var jsonData = JsonConvert.SerializeObject(updateBookingDto);
+			var jsonData = JsonConvert.SerializeObject(updateContactDto);
 
 			StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
-			var responseMessage = await client.PutAsync("https://localhost:7244/api/Booking", stringContent);
+			var responseMessage = await client.PutAsync("https://localhost:7244/api/Contact", stringContent);
 
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("Index");
 			}
 			return View();
-
-
 		}
+
+
+
+
+
+
+
+
+
+
 
 
 
