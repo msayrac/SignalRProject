@@ -31,7 +31,6 @@ namespace SignalRWebUI.Controllers
 		[HttpGet]
 		public IActionResult CreateCategory()
 		{
-
 			return View();
 		}
 
