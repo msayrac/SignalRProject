@@ -30,6 +30,25 @@ namespace SignalRApi.Controllers
 			return Ok(value);
 		}
 
+		[HttpGet("ProductCount")]
+		public async Task<IActionResult> ProductCount()
+		{
+			return Ok(_productService.TProductCount());
+		}
+
+		[HttpGet("ProductCountByHamburger")]
+		public async Task<IActionResult> ProductCountByHamburger()
+		{
+			return Ok(_productService.TProductByCategoryNameHamburger());
+		}
+
+		[HttpGet("ProductCountByDrink")]
+		public async Task<IActionResult> ProductCountByDrink()
+		{
+			return Ok(_productService.TProductByCategoryNameDrink());
+		}
+
+
 		[HttpGet("ProductListWithCategory")]
 		public IActionResult ProductListWithCategory()
 		{
