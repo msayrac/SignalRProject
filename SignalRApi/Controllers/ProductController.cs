@@ -48,6 +48,12 @@ namespace SignalRApi.Controllers
 			return Ok(_productService.TProductNameByMinPrice());
 		}
 
+		[HttpGet("ProductAvgPriceByHamburger")]
+		public async Task<IActionResult> ProductAvgPriceByHamburger()
+		{
+			return Ok(_productService.TProductAvgPriceByHamburger());
+		}
+
 
 		[HttpGet("ProductCountByHamburger")]
 		public async Task<IActionResult> ProductCountByHamburger()
