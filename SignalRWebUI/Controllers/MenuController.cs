@@ -27,8 +27,11 @@ namespace SignalRWebUI.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> AddBasket(CreateBasketDto createBasketDto)
+		public async Task<IActionResult> AddBasket(int id)
 		{
+			CreateBasketDto createBasketDto = new CreateBasketDto();
+			createBasketDto.ProductID = id;
+
 			var client = _httpClientFactory.CreateClient();
 
 			var jsonData = JsonConvert.SerializeObject(createBasketDto);
@@ -40,7 +43,7 @@ namespace SignalRWebUI.Controllers
 			{
 				return RedirectToAction("Index");
 			}
-			return View();
+			return Json(createBasketDto);
 
 		}
 
