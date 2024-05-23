@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SignalR.EntityLayer.Entities
+namespace SignalR.DtoLayer.MenuTableDto
 {
-	public class MenuTable
+	public class UpdateMenuTableDto
 	{
 		public int MenuTableID { get; set; }
 		public string Name { get; set; }
 		public bool Status { get; set; }
-		public List<Basket> Baskets { get; set; }
-
 	}
 }

@@ -64,9 +64,6 @@ namespace SignalRApi.Controllers
 		{
 			var value = _aboutService.TGetByID(id);
 			return Ok(value);
-
-
-
 		}
 
 
