@@ -39,10 +39,40 @@
 
 						<div class="card-body">
 							<div class="form-group">
-								<label for="footerDescription">Açıklama</label>
+								<label for="title">Alt Başlık</label>
+								<input type="text" class="form-control" asp-for="FooterTitle" id="title">
+							</div>
+						</div>
+
+						<div class="card-body">
+							<div class="form-group">
+								<label for="opendays">Açık Günler</label>
+								<input type="text" class="form-control" asp-for="OpenDays" id="opendays">
+							</div>
+						</div>
+						
+						<div class="card-body">
+							<div class="form-group">
+								<label for="opendescription">Açık Günler Açıklama</label>
+								<input type="text" class="form-control" asp-for="OpenDaysDescription" id="opendescription">
+							</div>
+						</div>
+
+						<div class="card-body">
+							<div class="form-group">
+								<label for="openhours">Açık Saatler</label>
+								<input type="text" class="form-control" asp-for="OpenHours" id="openhours">
+							</div>
+						</div>
+
+						<div class="card-body">
+							<div class="form-group">
+								<label for="footerDescription">Alt Açıklama Alanı</label>
 								<textarea rows="5" class="form-control" asp-for="FooterDescription" id="footerDescription"></textarea>
 							</div>
 						</div>
+
+						
 
 						<div class="card-action">
 							<button class="btn btn-primary">İletişim Bilgi Yazısını Oluştur</button>
