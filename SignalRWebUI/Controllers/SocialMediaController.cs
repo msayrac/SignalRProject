@@ -8,7 +8,6 @@ namespace SignalRWebUI.Controllers
 	public class SocialMediaController : Controller
 	{
 		private readonly IHttpClientFactory _httpClientFactory;
-
 		public SocialMediaController(IHttpClientFactory httpClientFactory)
 		{
 			_httpClientFactory = httpClientFactory;
