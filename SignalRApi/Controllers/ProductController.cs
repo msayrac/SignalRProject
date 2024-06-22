@@ -31,10 +31,23 @@ namespace SignalRApi.Controllers
 		}
 
 		[HttpGet("ProductCount")]
-		public async Task<IActionResult> ProductCount()
+		public IActionResult ProductCount()
 		{
 			return Ok(_productService.TProductCount());
 		}
+
+		[HttpGet("TotalPriceByDrinkCategory")]
+		public IActionResult TotalPriceByDrinkCategory()
+		{
+			return Ok(_productService.TTotalPriceByDrinkCategory());
+		}
+
+		[HttpGet("TotalPriceBySaladCategory")]
+		public IActionResult TotalPriceBySaladCategory()
+		{
+			return Ok(_productService.TTotalPriceBySaladCategory());
+		}
+
 
 		[HttpGet("ProductNameByMaxPrice")]
 		public async Task<IActionResult> ProductNameByMaxPrice()
@@ -89,6 +102,13 @@ namespace SignalRApi.Controllers
 		public async Task<IActionResult> ProductPriceAvg()
 		{
 			return Ok(_productService.TProductPriceAvg());
+		}
+
+
+		[HttpGet("ProductPriceBySteakBurger")]
+		public async Task<IActionResult> ProductPriceBySteakBurger()
+		{
+			return Ok(_productService.TProductPriceBySteakBurger());
 		}
 
 
